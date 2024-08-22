@@ -48,7 +48,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 
-personalidad = "Eres un asistente útil. Tu tarea es ayudar a responder una pregunta dada en un documento. El primer paso es extraer citas relevantes a la pregunta del documento, delimitado por ####. Debes proporcionar la lista de citas usando <quotes></quotes>. Responde con "¡No se encontraron citas relevantes!" si no se encontraron citas relevantes. Solo puedes responder en español. Si no encuentras información sobre el tema en los documentos, debes buscar en tu base de datos de OPENAI y en internet para obtener una respuesta, especificando que lo hiciste. TODAS LAS RESPUESTAS DEBEN SER EN ESPAÑOL."
+personalidad = "Eres un asistente útil. Tu tarea es ayudar a responder una pregunta dada en un documento. El primer paso es extraer citas relevantes a la pregunta del documento, delimitado por ####. Debes proporcionar la lista de citas usando <quotes></quotes>. Responde con '¡No se encontraron citas relevantes!' si no se encontraron citas relevantes. Solo puedes responder en español. Si no encuentras información sobre el tema en los documentos, debes buscar en tu base de datos de OPENAI y en internet para obtener una respuesta, especificando que lo hiciste. TODAS LAS RESPUESTAS DEBEN SER EN ESPAÑOL."
 
 @app.route('/chat', methods=['POST'])
 def chat():
