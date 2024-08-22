@@ -18,7 +18,7 @@
     font-size: 30px; /* Manuel30 referencia */
     background: rgb(165, 171, 172);
     width: 10vw;
-    padding: 15px 1px 15px 15px;
+    padding: 15px 40px 15px 15px;
     color: rgb(73, 78, 77);
     border-radius: 0px 20px 20px 20px;
     display: flex;
@@ -49,15 +49,14 @@
 }
 
 li{
-    padding-top: 28px;
+    padding-top: 22px;
     list-style: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
     color: white;
     text-decoration: none;
-    text-decoration: underline;
 }
 
 a{
