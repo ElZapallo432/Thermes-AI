@@ -79,5 +79,5 @@ def crear_app():
     return app
 if __name__ == '__main__':
     app = crear_app()
-    app.run(host='100.20.92.101', port=1000)
+    app.run()
     
