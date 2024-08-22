@@ -1,6 +1,7 @@
-pip install langchain_openai
-pip install langchain_community
-pip install Flask-Cors
-pip install flask
-pip install python-dotenv
-pip install openaipip install faiss-gpu
+langchain_openai
+langchain_community
+Flask-Cors
+flask
+python-dotenv
+install openai
+faiss-cpu
