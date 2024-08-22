@@ -77,6 +77,11 @@ def crear_app():
             return jsonify({"response": chatbot_response})
         except Exception as e:
             return jsonify({"error": str(e)}), 500
+            
+    @app.route('/')
+    def index():
+        return render_template('index.html')
+    
     return app
 if __name__ == '__main__':
     app = crear_app()
