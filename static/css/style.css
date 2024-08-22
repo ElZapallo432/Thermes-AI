@@ -97,7 +97,7 @@ html, body {
 
 .container {
     background-color: rgb(217, 243, 234);
-    background: url(wallpaper.jpeg);
+    background: url(static/images/Wallpaper.png);
     background-position: center;
     height: 90vh;
     width: 100vw;
