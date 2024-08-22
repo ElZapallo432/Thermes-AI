@@ -10,7 +10,7 @@ document.getElementById("input").addEventListener("keypress", function(event) {
         // Desactivar el input para evitar más entradas mientras se procesa
         event.target.disabled = true;
         
-        fetch('http://localhost:5000/chat', {
+        fetch('100.20.92.101', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
