@@ -1,8 +1,9 @@
 langchain_openai
 langchain_community
 Flask-Cors
-flask
+Flask
 python-dotenv
 openai
 faiss-cpu
 gunicorn
+langchain
