@@ -18,14 +18,14 @@ CORS(app)
 
 # Configura tu clave API de OpenAI
 openai_api_key = os.getenv('OPENAI_API_KEY')
-if not openai_api_key:  
+if not openai_api_key:
     raise ValueError("La clave API de OpenAI no está configurada.")
 
 # Configura el cliente de OpenAI
-openai_client = OpenAI(api_key=openai_api_key)
+openai_client = OpenAI(api_key=openai_api_key, max_tokens= -1)
 
 # Loader de .txt
-document_paths = ['data.txt', 'data1.txt', 'data2.txt', 'data3.txt', 'data10.txt', 'data4.txt']
+document_paths = ['data.txt', 'data1.txt', 'data2.txt', 'data3.txt', 'data10.txt']
 documents = []
 for path in document_paths:
     loader = TextLoader(path, encoding="UTF-8")
@@ -47,9 +47,6 @@ qa_chain = RetrievalQA.from_chain_type(
     memory=memory
 )
 
-
-personalidad = "Eres un asistente útil y amable. Tu tarea es ayudar a responder una pregunta dada en un documento. El primer paso es extraer citas relevantes a la pregunta del documento, delimitado por ####. Debes proporcionar la lista de citas usando <quotes></quotes>. Responde con '¡No se encontraron citas relevantes!' si no se encontraron citas relevantes. Solo puedes responder en español. Si no encuentras información sobre el tema en los documentos, debes buscar en tu base de datos de OPENAI y en internet para obtener una respuesta, especificando que lo hiciste. TODAS LAS RESPUESTAS DEBEN SER EN ESPAÑOL. Si te saludan o buscan entablar conversacion contigo siempre ofrece tus servicios para la tarea para la que fuiste diseñado"
-
 @app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json.get("message")
@@ -62,15 +59,11 @@ def chat():
         local_response = qa_chain.run(user_input)
         
         # Si la respuesta local es insatisfactoria, usa la API de OpenAI
-        if not local_response or "i don't know" in local_response.lower():
-            # Ajustar el prompt para responder en español
-            prompt = f"{personalidad} {user_input}"
-            openai_response = openai_client.generate([prompt])
+        if not local_response or "i don't know." in local_response.lower():
+            openai_response = openai_client.generate([user_input])
             chatbot_response = openai_response.generations[0][0].text.strip()
-            print("Response to client:", chatbot_response)
         else:
             chatbot_response = local_response
-            print("Response to client:", chatbot_response)
         
         return jsonify({"response": chatbot_response})
     except Exception as e:
@@ -78,4 +71,3 @@ def chat():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-    

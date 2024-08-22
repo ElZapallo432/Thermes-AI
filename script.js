@@ -1,3 +1,8 @@
+window.onload = function() {
+    var input = document.getElementById('input');
+    input.focus();
+};
+
 document.getElementById("input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         let userInput = event.target.value;
@@ -52,6 +57,7 @@ function displayPrompt(input) {
     responseElement.style.padding = '3px';
     responseElement.style.textAlign = 'left'; // Alinea el texto a la izquierda
     responseElement.style.fontFamily = 'Arial, sans-serif'; // Especifica la fuente sans-serif
+    responseElement.style.fontWeight = 'bold'; // Especifica la fuente sans-serif
     terminalInside.appendChild(responseElement);
 }
 

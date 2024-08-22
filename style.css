@@ -109,7 +109,7 @@ html, body {
 .terminal {
     height: 77vh;
     width: 110vh;
-    background-color: rgb(43, 40, 40);
+    background-color: rgb(63, 59, 59);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -146,16 +146,18 @@ html, body {
 
 input {
     width: 107vh;
-    background-color: rgb(14, 13, 13);
+    background-color: rgb(34, 33, 33);
     border-style: none;
     color: azure;
     margin-bottom: 10px;
     font-weight: 600;
     padding: 7px;
+    border: 1px solid rgb(208, 255, 249);
+    border-radius: 4px;
 }   
 
 input:focus {
-    border: none;
+    border: 1px solid rgb(208, 255, 249);
     outline: none;
 }
 
