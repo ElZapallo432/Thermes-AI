@@ -3,5 +3,5 @@ langchain_community
 Flask-Cors
 flask
 python-dotenv
-install openai
+openai
 faiss-cpu
