@@ -10,7 +10,7 @@ document.getElementById("input").addEventListener("keypress", function(event) {
         // Desactivar el input para evitar más entradas mientras se procesa
         event.target.disabled = true;
         
-        fetch('https://thermes-ai.onrender.com/', {
+        fetch('https://thermes-ai.onrender.com/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
