@@ -5,3 +5,4 @@ flask
 python-dotenv
 openai
 faiss-cpu
+gunicorn
