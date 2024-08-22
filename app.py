@@ -15,7 +15,8 @@ def crear_app():
     load_dotenv()
     
     app = Flask(__name__)
-    CORS(app)
+    
+    CORS(app, resources={r"/chat": {"origins": "https://thermesuc.github.io"}})
     
     # Configura tu clave API de OpenAI
     openai_api_key = os.getenv('OPENAI_API_KEY')
@@ -79,5 +80,6 @@ def crear_app():
     return app
 if __name__ == '__main__':
     app = crear_app()
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
     
