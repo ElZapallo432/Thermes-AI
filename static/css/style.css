@@ -80,7 +80,7 @@ html, body {
     box-sizing: border-box; /* Cambiado de 0 a border-box */
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: url('Wallpaper.png');
+    background: url('static/images/Wallpaper.png');
     background-position: 70%;
     background-repeat: no-repeat;
     background-size: cover  ;
